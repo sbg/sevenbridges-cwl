@@ -1,0 +1,16 @@
+.idea
+.cache
+.pytest_cache
+.coverage
+.tox
+.DS_Store
+*.pyc
+build
+docs/_build
+*.cwl
+dist
+*.egg-info
+/examples/example1 - first node/_output_
+/examples/__pycache__
+/presentation/.ipynb_checkpoints
+/docs/presentation/.ipynb_checkpoints/

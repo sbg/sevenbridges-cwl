@@ -1,0 +1,5 @@
+include README.md CHANGES.md VERSION requirements*.txt
+include sbg/cwl/resources/expression_lib.js
+include sbg/cwl/resources/aws_eu.json
+include sbg/cwl/resources/aws_us.json
+include sbg/cwl/resources/bash/util.sh

@@ -1,0 +1,17 @@
+{
+  "STR": "I am IN_STR",
+  "INT": 5,
+  "FLOAT": 22.22,
+  "BOOL": true,
+  "ANY": "I am Any type",
+  "FILE": {
+    "class": "File",
+    "path": "from_bash.py"
+  },
+  "DIR": {
+    "class": "Directory",
+    "path": "tmp"
+  },
+  "INT_OR_STR": 102,
+  "ENUM": "opt1"
+}
