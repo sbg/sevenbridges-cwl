@@ -36,7 +36,7 @@ make html
 ## <a name="tests">Run Tests</a>
 
 In order to run tests clone this repository, position yourself in the root of 
-the cloned project and after installing requirements-dev.txt, invoke: 
+the cloned project and, after installing requirements-dev.txt, invoke: 
 ```
 pytest
 ```
