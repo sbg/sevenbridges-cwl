@@ -2,7 +2,6 @@ tox
 pytest
 pytest-cov
 pytest-pep8
-pytest-flake8
 pytest-xdist
 sphinx
 sphinx_rtd_theme
