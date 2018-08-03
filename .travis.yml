@@ -1,19 +1,15 @@
 language: python
-
 python:
   - 3.6
-
 install:
   - pip install -r requirements-dev.txt
-
 script:
   - pytest --pep8 sbg --cov sbg
-
 deploy:
   provider: pypi
   user: sbg
   password:
-    secure: e1GqoX+g6qU88Lfh0PtL4QU3GrNRzzXafiZ395/53hcCm83lNemevxsBJ1CAN2wFpW5Kcjd20Gv6BSFacV8R26cvkSd82iSJvUqbmriIlLS9ro9gRjirZkr8gFV4DhkTbzxojIDAXT5BxNq0xXZF5AaC5eKQCr8ptwXQ77WQTuOZUD+TRgZU/32C77RglX3xeA6xTKqZO4ngg31y+ZHvP+gB/jwwOhzPVrgO9spds04Ve/71+UFI9LR9fJuLzsYIS8ShHtfsSidMb+ofQtGkePEjaEcz3J45D5P2SUedHO+tNuPSWGukG/GU7uGKvnGTbRK5fM+FCIpeKzTtB3N8KqzZCsPEixyrKeVYZZ+TH3RR5K7U4Y9v5dbMoCdtky3uk6+WcT4/al+U18OVJ3MTlBlBIeM6ZQJvi8ZqhE+U80E9RvT/G5JJkMnELoPZ1Wsl0xzAQNtkzgAh3c/pFlPoAW1GJWQh8k5tKqntOyy5Fbs/xJT+95h48LdZqVxfZtJVYqzsQfBlSVxCHqTztiXjuuhISlJIsOork+sltPDFhbbLMig2/FIlK3bfp/qWot8SnF4g8rE2bxm/Ujy9InvFSMQ9sixLOXZf43vEVCq1zLsqg3NO/D/0O5Zb9T0jM/fXcy9ttJAlVDvUHo2IASSAGlA1izpTGlOVSxPxnVjT4IE=
+    secure: oPk4SYBpj7ueanlW8bxbsAYViEFp/f/LruZmNTIuBVYYIWfHFkrlJUUpdBWo39V7hk3VPCb9Ic4CnfggP9a6YPSfdh9cN6n2n505XGV6FUGX28mOKIOnEJ4kN6SLnmHAFacqKRYY7y5RQ+PHccOb9CleR8rkZKvNBz2xYgkEk9UyJfS0nPWEL6M6KndwquoVDxONAO1tFpRk8u5AWW+KQYVpE3h7pIBVW0sJzf6dIxKS7AI61XW+9OTyJ4+bb+tkGKX7yxYnNP8ez4gpP1SEv9yi4nPRR34Ok/9yVcbwccvDKEJRDCVE0jcQuMoFq69bA2OuVG78CWAk6+26YXJ+VcsKSVaHoXxLXMNBwKhHo1smtUEiHzlnTtQd3fZWCFUwCaTG2/6xvKaDBIiK8zg3ZnwdVogcj5zu6rdq0ZNAHvKIZq2sXLkmy3cV7N+9dEz2MhAn516/2+495pIyE5Dg+/ur2JfrJ6Taj0uAcGx1/H4hOpcYFE0YwM7oi6jPEY94CVLj9k11LVJs6imU069Tj5RJD18kt2gz9erA37M0fF4JkLQ8GnclujNKLZWVMQA7MLcGowVdb51vdtsOgWUpfJGqqoQN0A3pzNvadkb+Cm8IieCrXv98/V6jGy+XY407f2j0HAM+Jj5uRfh+klVmrazFJbM9EOq1vNvLyFbBv1Q=
   on:
     tags: true
     branch: develop
