@@ -1,3 +1,6 @@
+sevenbridges-python>=0.13.2
+dill==0.2.7.1
+PyYAML==3.12
 tox
 pytest
 pytest-cov
