@@ -48,6 +48,7 @@ def _tool_from(t, f):
         py, "{}.py".format(f.__name__)
     ]
     t._create_file_from(f)
+    t.add_input_json()
     return t
 
 
