@@ -264,10 +264,6 @@ class CommandLineTool(App):
         for i in inputs:
             id = i['id']
             label = i['id']
-            # prefix = '--{}'.format(i['id'])
-            # expr = "$(\"'\" + JSON.stringify(inputs.{id}) + \"'\")".format(
-            #     id=id
-            # )
             i['type'].required = is_empty(i['type'].default)
             self.add_input(i['type'], id=id, label=label)
             self.add_requirement(InlineJavascript())
