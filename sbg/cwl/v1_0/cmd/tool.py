@@ -264,16 +264,8 @@ class CommandLineTool(App):
         for i in inputs:
             id = i['id']
             label = i['id']
-            prefix = '--{}'.format(i['id'])
-            expr = "$(\"'\" + JSON.stringify(inputs.{id}) + \"'\")".format(
-                id=id
-            )
             i['type'].required = is_empty(i['type'].default)
-            self.add_input(
-                i['type'], id=id, label=label, input_binding=InputBinding(
-                    prefix=prefix, shell_quote=False, value_from=expr
-                )
-            )
+            self.add_input(i['type'], id=id, label=label)
             self.add_requirement(InlineJavascript())
             self.add_requirement(ShellCommand())
 
@@ -309,7 +301,7 @@ class CommandLineTool(App):
         args = []
         for i in inputs:
             args.append(DEFAULT_ARG.format(
-                prefix=i.input_binding.prefix,
+                prefix='--{}'.format(i.id),
                 required=App.is_required(i.type),
                 default=i.default if not is_empty(i.default) else None
             ))
@@ -368,7 +360,6 @@ class CommandLineTool(App):
                     variables='\n\n'.join(context.create_variables()),
                     functions='\n\n'.join(context.create_functions()),
                     classes='\n\n'.join(context.create_classes()),
-                    parser=self._create_parser(self.inputs),
                     function=func.__name__
                 ),
                 encode=True

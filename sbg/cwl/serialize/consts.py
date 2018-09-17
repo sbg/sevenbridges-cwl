@@ -28,13 +28,11 @@ import sbgcwl_util
 #Classes
 {classes}
 
-args = sys.argv[1:]
+with open('input.json', 'r') as fp:
+    args = json.loads(fp.read())
 
-parser = argparse.ArgumentParser()
-{parser}
-ns = parser.parse_args(args)
 # Filter out optional arguments that are not provided
-kwargs = {{k: v for k, v in ns.__dict__.items()}}
+kwargs = {{k: v for k, v in args.items()}}
 result = sbgcwl_util.save({function}(**kwargs))
 '''
 
