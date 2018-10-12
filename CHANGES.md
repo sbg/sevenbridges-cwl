@@ -1,3 +1,8 @@
+1.0.2 (2018-10-12)
+==================
+-   Bugfix for missing type argument in array, enum schemas
+
+
 1.0.1 (2018-09-17)
 ==================
 -   Bugfix for too long command line
