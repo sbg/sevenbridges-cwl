@@ -1,6 +1,10 @@
 import pytest
-from sbg.cwl.v1_0 import Primitive, is_primitive, is_number
-from sbg.cwl.v1_0.types import File, Directory, to_file_dir_list
+from sbg import cwl
+from sbg.cwl.v1_0 import is_primitive, is_number
+from sbg.cwl.v1_0.types import File, Directory, to_file_dir_list, Primitive
+from sbg.cwl.v1_0.schema import (
+    ArrayBase, InputArray, OutputArray, EnumBase, InputEnum, OutputEnum
+)
 
 
 @pytest.mark.parametrize('type', [
@@ -61,3 +65,37 @@ def test_to_list_file_dir_type_error(value):
 def test_to_list_file_dir_value_error(value):
     with pytest.raises(ValueError):
         to_file_dir_list(value)
+
+
+@pytest.mark.parametrize('items', [
+    Primitive.FILE, InputArray(Primitive.FILE),
+    InputArray(InputArray(Primitive.FILE))
+])
+def test_input_array_with_items(items):
+    input_array = InputArray(items)
+    assert type(input_array.items_) == type(items)
+    assert input_array['type'] == ArrayBase.type
+
+
+@pytest.mark.parametrize('items', [
+    Primitive.FILE, OutputArray(Primitive.FILE),
+    OutputArray(OutputArray(Primitive.FILE))
+])
+def test_output_array_with_items(items):
+    output_array = OutputArray(items)
+    assert type(output_array.items_) == type(items)
+    assert output_array['type'] == ArrayBase.type
+
+
+def test_input_enum():
+    symbols = ['a', 'b', 'c']
+    input_enum = InputEnum(symbols)
+    assert input_enum.symbols == symbols
+    assert input_enum['type'] == EnumBase.type
+
+
+def test_output_enum():
+    symbols = ['a', 'b', 'c']
+    output_enum = OutputEnum(symbols)
+    assert output_enum.symbols == symbols
+    assert output_enum['type'] == EnumBase.type

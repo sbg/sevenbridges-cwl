@@ -523,7 +523,7 @@ class ArrayBase(SchemaBase):
 
 
 class InputArray(ArrayBase):
-    def __init__(self, items, label=None, input_binding=None, type='enum'):
+    def __init__(self, items, label=None, input_binding=None, type='array'):
         super(InputArray, self).__init__(items, label, type)
         self.input_binding = input_binding
 
@@ -540,7 +540,7 @@ class InputArray(ArrayBase):
 
 
 class OutputArray(ArrayBase):
-    def __init__(self, items, label=None, output_binding=None, type='enum'):
+    def __init__(self, items, label=None, output_binding=None, type='array'):
         super(OutputArray, self).__init__(items, label, type)
         self.output_binding = output_binding
 
