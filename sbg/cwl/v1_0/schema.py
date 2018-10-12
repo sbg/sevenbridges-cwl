@@ -483,7 +483,7 @@ class OutputRecordField(RecordFieldBase):
 class ArrayBase(SchemaBase):
     type = 'array'
 
-    def __init__(self, items, label=None, type='array'):
+    def __init__(self, items, label, type):
         super(ArrayBase, self).__init__()
         assert type == self.type
         self['type'] = self.type
@@ -523,8 +523,8 @@ class ArrayBase(SchemaBase):
 
 
 class InputArray(ArrayBase):
-    def __init__(self, items, label=None, input_binding=None):
-        super(InputArray, self).__init__(items, label=label)
+    def __init__(self, items, label=None, input_binding=None, type='array'):
+        super(InputArray, self).__init__(items, label, type)
         self.input_binding = input_binding
 
     @property
@@ -540,8 +540,8 @@ class InputArray(ArrayBase):
 
 
 class OutputArray(ArrayBase):
-    def __init__(self, items, label=None, output_binding=None):
-        super(OutputArray, self).__init__(items, label=label)
+    def __init__(self, items, label=None, output_binding=None, type='array'):
+        super(OutputArray, self).__init__(items, label, type)
         self.output_binding = output_binding
 
     @property
@@ -559,7 +559,7 @@ class OutputArray(ArrayBase):
 class EnumBase(SchemaBase):
     type = 'enum'
 
-    def __init__(self, symbols, label=None, type='enum'):
+    def __init__(self, symbols, label, type):
         super(EnumBase, self).__init__()
         assert type == self.type
         self['type'] = self.type
@@ -596,9 +596,9 @@ class EnumBase(SchemaBase):
 
 
 class InputEnum(EnumBase):
-    def __init__(self, symbols, label=None, input_binding=None):
+    def __init__(self, symbols, label=None, input_binding=None, type='enum'):
         super(InputEnum, self).__init__(
-            symbols=symbols, label=label
+            symbols=symbols, label=label, type=type
         )
         self.input_binding = input_binding
 
@@ -612,9 +612,9 @@ class InputEnum(EnumBase):
 
 
 class OutputEnum(EnumBase):
-    def __init__(self, symbols, label=None, output_binding=None):
+    def __init__(self, symbols, label=None, output_binding=None, type='enum'):
         super(OutputEnum, self).__init__(
-            symbols=symbols, label=label
+            symbols=symbols, label=label, type=type
         )
         self.output_binding = output_binding
 

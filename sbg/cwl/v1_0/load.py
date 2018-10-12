@@ -6,15 +6,16 @@ from sbg.cwl.v1_0.wf.expression_tool import ExpressionTool
 
 def load(cwl):
     """
-    Loads CWL document from file and instantiate object of a class specified by
-    key ``class`` inside a document.
+    Loads CWL document from file or JSON object and instantiate object of a
+    class specified by key ``class`` inside a document.
 
     :param cwl: file (can be either in ``JSON`` or ``YAML`` format)
     :return: depending on ``class`` can be either an instance of
              ``CommandLineTool`` or ``ExpressionTool`` or ``Workflow``
     """
 
-    cwl = from_file(cwl)
+    if not isinstance(cwl, dict):
+        cwl = from_file(cwl)
     if isinstance(cwl, dict):
         if "class" in cwl:
             if cwl['class'] == 'CommandLineTool':
