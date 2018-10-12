@@ -1,5 +1,4 @@
 import pytest
-from sbg import cwl
 from sbg.cwl.v1_0 import is_primitive, is_number
 from sbg.cwl.v1_0.types import File, Directory, to_file_dir_list, Primitive
 from sbg.cwl.v1_0.schema import (
