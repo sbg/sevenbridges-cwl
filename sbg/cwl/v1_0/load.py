@@ -14,7 +14,8 @@ def load(cwl):
              ``CommandLineTool`` or ``ExpressionTool`` or ``Workflow``
     """
 
-    cwl = from_file(cwl)
+    if not isinstance(cwl, dict):
+        cwl = from_file(cwl)
     if isinstance(cwl, dict):
         if "class" in cwl:
             if cwl['class'] == 'CommandLineTool':
