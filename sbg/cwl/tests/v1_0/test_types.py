@@ -132,4 +132,3 @@ def test_output_enum_from_dict():
     output_enum = OutputEnum(**raw_dict)
     assert output_enum.type == raw_dict['type']
     assert output_enum.symbols == raw_dict['symbols']
-
