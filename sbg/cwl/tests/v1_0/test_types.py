@@ -86,6 +86,24 @@ def test_output_array_with_items(items):
     assert output_array['type'] == ArrayBase.type
 
 
+@pytest.mark.parametrize('input_array', [
+    InputArray(Primitive.FILE), InputArray(InputArray(Primitive.FILE))
+])
+def test_input_array_from_dict(input_array):
+    raw_dict = input_array.to_dict()
+    input_array = InputArray(**raw_dict)
+    assert input_array.type == raw_dict['type']
+
+
+@pytest.mark.parametrize('output_array', [
+    OutputArray(Primitive.FILE), OutputArray(OutputArray(Primitive.FILE))
+])
+def test_output_array_from_dict(output_array):
+    raw_dict = output_array.to_dict()
+    output_array = OutputArray(**raw_dict)
+    assert output_array.type == raw_dict['type']
+
+
 def test_input_enum():
     symbols = ['a', 'b', 'c']
     input_enum = InputEnum(symbols)
@@ -98,3 +116,20 @@ def test_output_enum():
     output_enum = OutputEnum(symbols)
     assert output_enum.symbols == symbols
     assert output_enum['type'] == EnumBase.type
+
+
+def test_input_enum_from_dict():
+    symbols = ['a', 'b', 'c']
+    raw_dict = InputEnum(symbols).to_dict()
+    input_enum = InputEnum(**raw_dict)
+    assert input_enum.type == raw_dict['type']
+    assert input_enum.symbols == raw_dict['symbols']
+
+
+def test_output_enum_from_dict():
+    symbols = ['a', 'b', 'c']
+    raw_dict = OutputEnum(symbols).to_dict()
+    output_enum = OutputEnum(**raw_dict)
+    assert output_enum.type == raw_dict['type']
+    assert output_enum.symbols == raw_dict['symbols']
+

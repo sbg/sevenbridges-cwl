@@ -96,6 +96,9 @@ class Cwl(dict, metaclass=CwlMeta):
         """
         return json.dumps(self, indent=2)
 
+    def to_dict(self):
+        return dict(self)
+
     def calc_hash(self):
         """
         Returns calculated hash value for this object.
