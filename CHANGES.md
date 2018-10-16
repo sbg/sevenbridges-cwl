@@ -1,3 +1,8 @@
+1.1.0 (2018-10-16)
+==================
+-   Change package name to sbg-cwl to sevenbridges-cwl
+-   Set author and maintainer to Seven Bridges Genomics Inc
+
 1.0.2 (2018-10-12)
 ==================
 -   Bugfix for missing type argument in array, enum schemas
