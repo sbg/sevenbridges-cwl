@@ -4,7 +4,7 @@ from os import path
 from datetime import datetime
 from setuptools import setup, find_packages
 
-NAME = 'sbg-cwl'
+NAME = 'sevenbridges-cwl'
 VERSION = '0.0.1'
 DIR = path.abspath(path.dirname(__file__))
 NOW = datetime.utcnow()
@@ -26,8 +26,8 @@ setup(
         "dill==0.2.7.1",
         "PyYAML==3.12"
     ],
-    author='Filip Tubic',
-    maintainer='Filip Tubic',
+    author='Seven Bridges Genomics Inc.',
+    maintainer='Seven Bridges Genomics Inc.',
     maintainer_email='filip.tubic@sbgenomics.com',
     author_email='filip.tubic@sbgenomics.com',
     description='SevenBridges Common Workflow Language',
