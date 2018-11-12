@@ -30,8 +30,9 @@ setup(
     maintainer='Seven Bridges Genomics Inc.',
     maintainer_email='filip.tubic@sbgenomics.com',
     author_email='filip.tubic@sbgenomics.com',
-    description='SevenBridges Common Workflow Language',
+    description='SBG Python library to create CWL tools and workflows',
     long_description=long_description,
+    long_description_content_type="text/markdown",
     include_package_data=True,
     license='Copyright (c) {} Seven Bridges Genomics'.format(NOW.year),
     classifiers=[
@@ -41,5 +42,5 @@ setup(
         'Operating System :: POSIX',
         'Programming Language :: Python :: 3',
     ],
-    keywords='seven bridges cwl'
+    keywords='seven bridges cwl common workflow language'
 )
