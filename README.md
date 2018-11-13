@@ -19,15 +19,22 @@ is preferable, then look at the
 
 ## <a name="install">Install</a>
 
-1. Clone
-2. Redirect to **sevenbridges-cwl** and install: 
-`cd sevenbridges-cwl && pip install .`
+### Official releases
+Official releases are available via `pip install sevenbridges-cwl` (This is the [pypi entry](https://pypi.org/project/sevenbridges-cwl/) for this project)
+
+### Development versions
+To obtain unreleased versions: 
+
+- `git clone` this repository 
+- `cd sevenbridges-cwl && pip install .`
+
+The `master` branch is for more stable code while `develop` is for cutting edge features being currently worked on
 
 ## <a name="docs">Docs</a>
 
 If you are interested in reviewing this documentation locally, clone this 
-repository, position yourself in the docs directory and after installing 
-requirements-dev.txt, invoke:
+repository, position yourself in the `docs` directory and after installing 
+`requirements-dev.txt`, invoke:
 
 ```
 make html
@@ -36,16 +43,17 @@ make html
 ## <a name="tests">Run Tests</a>
 
 In order to run tests clone this repository, position yourself in the root of 
-the cloned project and, after installing requirements-dev.txt, invoke: 
+the cloned project and, after installing `requirements-dev.txt`, invoke: 
 ```
 pytest
 ```
 
 ## <a name="examples">Examples</a>
 
-The following will give a brief overview of what this package can offer through 
-simple examples. Complete list of all examples can be found 
-<a href="docs/examples/">here</a>.
+The following code will give a brief overview of what this package can offer through 
+simple examples. 
+
+**A Complete list of all examples can be found <a href="docs/examples/">here</a>.**
 
 ### <a name="example1">Run workflow on a SevenBridges platform</a>
 
