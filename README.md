@@ -53,7 +53,7 @@ pytest
 The following code will give a brief overview of what this package can offer through 
 simple examples. 
 
-**A Complete list of all examples can be found <a href="docs/examples/">here</a>.**
+**A Complete list of all examples can be found <a href="https://github.com/sbg/sevenbridges-cwl/tree/master/docs/examples">here</a>.**
 
 ### <a name="example1">Run workflow on a SevenBridges platform</a>
 
