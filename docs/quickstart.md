@@ -39,8 +39,9 @@ t.add_output(cwl.File(glob='_stdout_', required=True), id='out')
 ``` 
 Example above illustrates `echo HelloWorld > _stdout_` command. Object `t` is 
 an instance of `CommandLineTool` class which has a number of useful builtin 
-methods described [here](code.html#v1_0.CommandLineTool). Generated tool
-can be easily run on a Seven Bridges platform using `Session` object:
+methods described [here](code.html#sbg.cwl.v1_0.CommandLineTool). 
+Generated tool can be easily run on a Seven Bridges platform using 
+`Session` object:
 ```python
 session = cwl.Session(profile='<your_profile>')
 session.run('<your_project>', t)
@@ -178,7 +179,7 @@ Input/Output types are translated into CWL concrete types by following rules:
    (eg. `cwl.Array(cwl.Int())` - list of ints)
 
 Complete documentation of `@to_tool` decorator is located 
-[here](code.html#v1_0.to_tool).
+[here](code.html#sbg.cwl.v1_0.to_tool).
 
 
 ### Wrapping bash code
@@ -247,7 +248,7 @@ with cwl.workflow('wf.cwl', 'w') as wf:
 ```
 
 Object `wf` is an instance of `Workflow` class which documentation can be found
-[here](code.html#v1_0.Workflow).
+[here](code.html#sbg.cwl.v1_0.Workflow).
 
 Running code block above will generate `wf.cwl` in the current working 
 directory. Using [Rabix Composer](https://github.com/rabix/composer) generated
@@ -302,7 +303,7 @@ session.run('<your_project>', wf, inputs={'x': '10.2', 'n': 10})
 ## Loading existing documents
 
 Existing CWL documents can be loaded from a file using `load` function, 
-[docs](code.html?#v1_0.load). 
+[docs](code.html?#sbg.cwl.v1_0.load). 
  
 ```python
 from sbg import cwl
