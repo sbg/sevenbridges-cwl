@@ -22,7 +22,8 @@ import sys
 import sphinx_rtd_theme
 from recommonmark.transform import AutoStructify
 
-sys.path.insert(0, os.path.abspath('../sevenbridges/cwl'))
+extra_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(extra_path)
 
 # -- General configuration ------------------------------------------------
 
