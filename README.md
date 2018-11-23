@@ -32,6 +32,8 @@ The `master` branch is for more stable code while `develop` is for cutting edge 
 
 ## <a name="docs">Docs</a>
 
+Complete documentation can be found [here](https://sevenbridges-cwl.readthedocs.io/en/latest/quickstart.html).
+
 If you are interested in reviewing this documentation locally, clone this 
 repository, position yourself in the `docs` directory and after installing 
 `requirements-dev.txt`, invoke:
