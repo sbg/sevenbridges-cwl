@@ -84,7 +84,7 @@ class Cwl(dict, metaclass=CwlMeta):
 
     def __str__(self):
         return yaml.dump(
-            yaml.load(json.dumps(self, indent=2)),
+            yaml.load(json.dumps(self, indent=2), Loader=yaml.SafeLoader),
             default_flow_style=False
         )
 

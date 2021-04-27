@@ -18,7 +18,7 @@ def from_file(cwl):
     if isinstance(cwl, str):
         if os.path.isfile(cwl):
             with open(cwl, 'r') as fp:
-                cwl = yaml.load(fp)
+                cwl = yaml.load(fp, Loader=yaml.SafeLoader)
         else:
             raise ValueError("Expected yaml/json file got, {}".format(cwl))
     else:

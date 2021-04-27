@@ -8,10 +8,10 @@ import functools
 
 
 class Function(object):
-    def_re = re.compile('^\s*def\s+')
+    def_re = re.compile(r'^\s*def\s+')
     deco_re = re.compile(r'^\s*(?P<deco>@([^\d\W]\w*\.?)+)', re.UNICODE)
-    brace_re = re.compile('^\s*\(')
-    empty_brace_re = re.compile('^\s*\(\s*\)')
+    brace_re = re.compile(r'^\s*\(')
+    empty_brace_re = re.compile(r'^\s*\(\s*\)')
 
     def __init__(self, func):
         self.func = func

@@ -53,21 +53,21 @@ def to_list(value):
 
 
 @salad
-def to_slist(l):
-    if l is not None:
-        if isinstance(l, list):
-            return list(map(to_str, l))
+def to_slist(obj):
+    if obj is not None:
+        if isinstance(obj, list):
+            return list(map(to_str, obj))
         else:
-            raise TypeError('Expected list[str], got: {}'.format(type(l)))
+            raise TypeError('Expected list[str], got: {}'.format(type(obj)))
 
 
 @salad
-def to_ilist(l):
-    if l is not None:
-        if isinstance(l, list):
-            return list(map(to_int, l))
+def to_ilist(obj):
+    if obj is not None:
+        if isinstance(obj, list):
+            return list(map(to_int, obj))
         else:
-            raise TypeError('Expected list[int], got: {}'.format(type(l)))
+            raise TypeError('Expected list[int], got: {}'.format(type(obj)))
 
 
 @salad

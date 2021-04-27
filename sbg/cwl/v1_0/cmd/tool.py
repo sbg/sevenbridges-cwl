@@ -2,7 +2,8 @@ import os
 import re
 import shutil
 import inspect
-import collections
+from collections import abc
+
 from sbg.cwl import serialize
 from sbg.cwl.v1_0.app import App
 from sbg.cwl.sbg.hints import SaveLogs
@@ -210,7 +211,7 @@ class CommandLineTool(App):
             if not is_empty(v.default):
                 type_.default = v.default
 
-            if (isinstance(type_, collections.Hashable) and
+            if (isinstance(type_, abc.Hashable) and
                     type_ in self.type_map):
                 type_ = self.type_map[type_]
             elif not isinstance(type_, Hint):
@@ -243,7 +244,7 @@ class CommandLineTool(App):
                 if annotation != inspect._empty:
                     type_ = annotation
 
-                if (isinstance(type_, collections.Hashable) and
+                if (isinstance(type_, abc.Hashable) and
                         type_ in self.type_map):
                     type_ = self.type_map[type_]
                 elif not isinstance(type_, Hint):
@@ -405,9 +406,9 @@ class CommandLineTool(App):
             self.hints = []
 
         self.hints.append(SaveLogs(os.path.basename(name)))
-        for l in locals:
-            if os.path.isfile(l):
-                self.hints.append(SaveLogs(os.path.basename(l)))
+        for local in locals:
+            if os.path.isfile(local):
+                self.hints.append(SaveLogs(os.path.basename(local)))
 
     @staticmethod
     def _create_var(t, env_name, env_val):
