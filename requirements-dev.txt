@@ -1,5 +1,5 @@
 sevenbridges-python>=0.13.2
-dill==0.3.3"
+dill==0.3.3
 PyYAML==5.4.1
 flake8==3.9.1
 pytest==6.2.3
