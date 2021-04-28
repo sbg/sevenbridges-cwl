@@ -23,8 +23,8 @@ setup(
     platforms=['POSIX', 'MacOS', 'Windows'],
     install_requires=[
         "sevenbridges-python>=0.13.2",
-        "dill==0.2.7.1",
-        "PyYAML==3.12"
+        "dill==0.3.3",
+        "PyYAML==5.4.1"
     ],
     author='Seven Bridges Genomics Inc.',
     maintainer='Seven Bridges Genomics Inc.',

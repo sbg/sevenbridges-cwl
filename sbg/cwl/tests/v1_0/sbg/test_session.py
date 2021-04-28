@@ -55,7 +55,7 @@ def test_init_api_profile(kwargs):
     'user/project', mock.MagicMock(id='user/project', spec=Project)
 ])
 def test_create_new_app(tool, project):
-    with mock.patch('sbg.cwl.sbg.session.Api') as api_mock:
+    with mock.patch('sbg.cwl.sbg.session.Api'):
         project_mock = mock.MagicMock(id='user/project', spec=Project)
 
         session = Session(token='t', endpoint='e')
@@ -88,7 +88,7 @@ def test_create_app_no_changes(tool, project):
     'user/project', mock.MagicMock(id='user/project', spec=Project)
 ])
 def test_create_app_new_revision(tool, project):
-    with mock.patch('sbg.cwl.sbg.session.Api') as api_mock:
+    with mock.patch('sbg.cwl.sbg.session.Api'):
         project_mock = mock.MagicMock(id='user/project', spec=Project)
 
         session = Session(token='t', endpoint='e')
