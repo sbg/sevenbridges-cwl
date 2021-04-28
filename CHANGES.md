@@ -1,4 +1,4 @@
-1.1.4
+1.1.4 (2021-04-28)
 ==================
 -   Use PyYaml SafeLoader for load calls.
 
