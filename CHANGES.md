@@ -1,3 +1,7 @@
+1.1.4
+==================
+-   Use PyYaml SafeLoader for load calls.
+
 1.1.3 (2018-11-23)
 ==================
 -   Add Read the Docs integration.
