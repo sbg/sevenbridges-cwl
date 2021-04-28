@@ -1,10 +1,11 @@
 language: python
 python:
-- 3.6
+- 3.9
 install:
 - pip install -r requirements-dev.txt
 script:
-- pytest --pep8 sbg --cov sbg
+- flake8
+- pytest --cov
 deploy:
   provider: pypi
   user: sbg
